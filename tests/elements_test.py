@@ -1,10 +1,12 @@
 import time
 
-from pages.base_page import BasePage
-from conftest import driver
+from pages.elements_page import TextBoxPage
 
+class TestElements:
+    class TestTextBox:
 
-def test(driver):
-    page = BasePage(driver, 'https://www.google.com')
-    page.open()
-    time.sleep(5)
+        def test_text_box(self, driver):
+            text_box_page = TextBoxPage(driver, 'https://demoqa.com/text-box')
+            text_box_page.open()
+            text_box_page.fill_all_fields()
+            time.sleep(10)
